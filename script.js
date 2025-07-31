@@ -1,32 +1,31 @@
-// Tombol Play di menu utama
+// ==== Navigasi Menu Utama ====
+
 function startGame() {
   document.getElementById("menu").style.display = "none";
   document.getElementById("character-selection").style.display = "block";
 }
 
-// Pilih opsi "Options"
 function openOptions() {
   alert("Options belum tersedia.");
 }
 
-// Tombol Quit
 function quitGame() {
   alert("Terima kasih telah bermain. Sampai jumpa!");
 }
 
-// Kembali dari karakter ke menu
 function backToMenu() {
   document.getElementById("character-selection").style.display = "none";
   document.getElementById("menu").style.display = "block";
 }
 
-// Kembali dari input nama ke pilihan karakter
 function backToCharacterSelect() {
   document.getElementById("name-input").style.display = "none";
   document.getElementById("character-selection").style.display = "block";
 }
 
-// Simpan pilihan karakter dan lanjut ke input nama
+
+// ==== Pemilihan Karakter ====
+
 let selectedCharacter = null;
 
 function selectCharacter(gender) {
@@ -35,7 +34,9 @@ function selectCharacter(gender) {
   document.getElementById("name-input").style.display = "block";
 }
 
-// Setelah nama diketik dan tekan lanjut
+
+// ==== Konfirmasi Nama dan Masuk Game ====
+
 function confirmName() {
   const name = document.getElementById("character-name").value.trim();
   if (name === "") {
@@ -44,25 +45,46 @@ function confirmName() {
   }
 
   alert(`Karakter "${name}" (${selectedCharacter === 'male' ? 'Laki-laki' : 'Perempuan'}) dipilih!`);
-  
+
   document.getElementById("name-input").style.display = "none";
   document.getElementById("game").style.display = "block";
 
-  // Bisa lanjut ke distribusi stat atau gameplay
-  updateStatusBars(); // Menampilkan bar status saat game dimulai
+  updateStatusBars(); // Tampilkan status bar saat game dimulai
 }
 
-// Fungsi untuk memantau orientasi (tanpa reload)
+
+// ==== Status Bar Update ====
+
+function updateStatusBars() {
+  // Nilai default awal
+  const maxHealth = 100;
+  const maxMana = 20;
+  const armour = 0;
+
+  // Atur lebar bar
+  document.getElementById("health-bar").style.width = "100%";
+  document.getElementById("mana-bar").style.width = "100%";
+  document.getElementById("armour-bar").style.width = "0%";
+
+  // Tampilkan angka
+  document.getElementById("health-text").textContent = `${maxHealth} / ${maxHealth}`;
+  document.getElementById("mana-text").textContent = `${maxMana} / ${maxMana}`;
+  document.getElementById("armour-text").textContent = armour;
+}
+
+
+// ==== Deteksi Orientasi Tanpa Reload ====
+
 function checkOrientation() {
   const warning = document.getElementById("orientation-warning");
   const gameContent = document.getElementById("game-content");
 
   if (window.innerHeight > window.innerWidth) {
-    // Potrait
+    // Mode potrait: tampilkan peringatan
     warning.style.display = "flex";
     gameContent.style.display = "none";
   } else {
-    // Landscape
+    // Mode landscape: tampilkan game
     warning.style.display = "none";
     gameContent.style.display = "block";
   }
