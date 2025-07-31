@@ -16,3 +16,13 @@ function quitGame() {
 window.addEventListener("orientationchange", () => {
   location.reload();
 });
+
+function backToMenu() {
+  document.getElementById("character-selection").style.display = "none";
+  document.getElementById("menu").style.display = "block";
+}
+
+function selectCharacter(gender) {
+  alert("Kamu memilih karakter: " + (gender === 'male' ? "Laki-laki" : "Perempuan"));
+  // Lanjut ke tahap berikutnya nanti
+}
