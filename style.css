@@ -116,3 +116,6 @@ body {
 #stat-distribution button[title]:hover {
   background: #888;
 }
+
+<br>
+<button onclick="goBackToCharacterSelect()">⬅ Kembali</button>
