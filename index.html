@@ -6,29 +6,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="menu">
-      <h1>League of Honor</h1>
-
-      <button onclick="newGame()">New Game</button><br><br>
-      <button onclick="loadGame()">Load Game</button><br><br>
-      <button onclick="openSettings()">Settings</button><br><br>
-      <button onclick="openOptions()">Options</button>
+    <!-- Peringatan jika portrait -->
+    <div id="orientation-warning">
+      Silakan putar perangkat Anda ke mode landscape untuk bermain.
     </div>
 
-    <div id="game" style="display: none;">
-      <p id="status">Game dimulai...</p>
+    <!-- Konten utama game -->
+    <div id="game-content">
+      <div id="menu">
+        <h1>League of Honor</h1>
+
+        <button onclick="newGame()">New Game</button><br><br>
+        <button onclick="loadGame()">Load Game</button><br><br>
+        <button onclick="openSettings()">Settings</button><br><br>
+        <button onclick="openOptions()">Options</button>
+      </div>
+
+      <div id="game" style="display: none;">
+        <p id="status">Game dimulai...</p>
+      </div>
     </div>
 
     <script src="script.js"></script>
   </body>
 </html>
-
-<body>
-  <div id="orientation-warning">
-    Silakan putar perangkat Anda ke mode landscape untuk bermain.
-  </div>
-
-  <div id="game-content">
-    <!-- Semua isi menu dan game di sini -->
-  </div>
-</body>
