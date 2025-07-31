@@ -1,6 +1,6 @@
 function startGame() {
   document.getElementById("menu").style.display = "none";
-  document.getElementById("game").style.display = "block";
+  document.getElementById("character-selection").style.display = "block"; // yang benar ditampilkan
 }
 
 function openOptions() {
@@ -9,10 +9,10 @@ function openOptions() {
 
 function quitGame() {
   alert("Terima kasih telah bermain. Sampai jumpa!");
-  // Tidak bisa menutup tab browser dari JavaScript secara langsung.
+  // Tidak bisa menutup tab browser dari JavaScript
 }
 
-// Reload saat rotasi agar layout menyesuaikan
+// Reload halaman saat rotasi layar
 window.addEventListener("orientationchange", () => {
   location.reload();
 });
@@ -24,5 +24,6 @@ function backToMenu() {
 
 function selectCharacter(gender) {
   alert("Kamu memilih karakter: " + (gender === 'male' ? "Laki-laki" : "Perempuan"));
-  // Lanjut ke tahap berikutnya nanti
+  document.getElementById("character-selection").style.display = "none";
+  document.getElementById("game").style.display = "block"; // baru masuk ke game
 }
