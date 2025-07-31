@@ -100,3 +100,19 @@ body {
   font-size: 18px;
   padding: 4px 10px;
 }
+
+#stat-distribution button[title] {
+  font-weight: bold;
+  border: none;
+  background: #666;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+#stat-distribution button[title]:hover {
+  background: #888;
+}
