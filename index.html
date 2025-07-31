@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>League of Honor</title>
+  <title>Empire and Honor</title> <!-- Ubah nama game juga -->
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -12,10 +12,24 @@
 
   <div id="game-content">
     <div id="menu">
-      <h1>League of Honor</h1>
+      <h1>Empire and Honor</h1>
       <button onclick="startGame()">Play</button><br>
       <button onclick="openOptions()">Options</button><br>
       <button onclick="quitGame()">Quit</button>
+    </div>
+
+    <div id="character-selection" style="display: none;">
+      <h2>Pilih Karakter Anda</h2>
+      <div class="character-row">
+        <button onclick="selectCharacter('male')">
+          <img src="assets/male.png" alt="Laki-laki"><br>Laki-laki
+        </button>
+        <button onclick="selectCharacter('female')">
+          <img src="assets/female.png" alt="Perempuan"><br>Perempuan
+        </button>
+      </div>
+      <br>
+      <button onclick="backToMenu()">⬅ Kembali</button>
     </div>
 
     <div id="game" style="display: none;">
@@ -26,17 +40,3 @@
 </body>
 </html>
 
-<!-- Pilih karakter -->
-<div id="character-selection" style="display: none;">
-  <h2>Pilih Karakter Anda</h2>
-  <div class="character-row">
-    <button onclick="selectCharacter('male')">
-      <img src="assets/male.png" alt="Laki-laki"><br>Laki-laki
-    </button>
-    <button onclick="selectCharacter('female')">
-      <img src="assets/female.png" alt="Perempuan"><br>Perempuan
-    </button>
-  </div>
-  <br>
-  <button onclick="backToMenu()">⬅ Kembali</button>
-</div>
