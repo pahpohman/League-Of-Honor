@@ -59,7 +59,19 @@
   <h2>Kustomisasi Karakter</h2>
   <label>Nama Karakter: <input type="text" id="character-name" value="Mage"></label>
 
-  <p>Poin tersedia: <span id="points-left">6</span></p>
+<p>
+  <button onclick="toggleInfo()" title="Penjelasan status">i</button>
+  Poin tersedia: <span id="points-left">6</span>
+</p>
+<div id="info-box" style="display: none; font-size: 14px; margin-bottom: 10px; text-align: left;">
+  <ul>
+    <li><strong>Strength</strong>: Menambah serangan fisik</li>
+    <li><strong>Agility</strong>: Meningkatkan kecepatan dan menghindar</li>
+    <li><strong>Intelligence</strong>: Menambah serangan sihir dan mana</li>
+    <li><strong>Luck</strong>: Meningkatkan critical dan drop item</li>
+    <li><strong>Armour</strong>: Mengurangi damage yang diterima</li>
+  </ul>
+</div>
 
   <div class="stat-row">
     Strength: <button onclick="adjustStat('strength', -1)">−</button>
