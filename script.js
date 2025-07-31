@@ -15,3 +15,7 @@ function openSettings() {
 function openOptions() {
   alert("Options belum tersedia.");
 }
+
+function selectCharacter(className) {
+  alert("Kamu memilih: " + className);
+}
