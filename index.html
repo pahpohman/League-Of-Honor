@@ -54,3 +54,39 @@
 
   </body>
 </html>
+
+<div id="stat-distribution" style="display: none;">
+  <h2>Kustomisasi Karakter</h2>
+  <label>Nama Karakter: <input type="text" id="character-name" value="Mage"></label>
+
+  <p>Poin tersedia: <span id="points-left">6</span></p>
+
+  <div class="stat-row">
+    Strength: <button onclick="adjustStat('strength', -1)">−</button>
+    <span id="strength">0</span>
+    <button onclick="adjustStat('strength', 1)">+</button>
+  </div>
+  <div class="stat-row">
+    Agility: <button onclick="adjustStat('agility', -1)">−</button>
+    <span id="agility">0</span>
+    <button onclick="adjustStat('agility', 1)">+</button>
+  </div>
+  <div class="stat-row">
+    Intelligence: <button onclick="adjustStat('intelligence', -1)">−</button>
+    <span id="intelligence">0</span>
+    <button onclick="adjustStat('intelligence', 1)">+</button>
+  </div>
+  <div class="stat-row">
+    Luck: <button onclick="adjustStat('luck', -1)">−</button>
+    <span id="luck">0</span>
+    <button onclick="adjustStat('luck', 1)">+</button>
+  </div>
+  <div class="stat-row">
+    Armour: <button onclick="adjustStat('armour', -1)">−</button>
+    <span id="armour">0</span>
+    <button onclick="adjustStat('armour', 1)">+</button>
+  </div>
+
+  <br>
+  <button onclick="confirmStats()">Lanjut</button>
+</div>
