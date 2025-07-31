@@ -59,3 +59,18 @@ function toggleInfo() {
   const box = document.getElementById("info-box");
   box.style.display = box.style.display === "none" ? "block" : "none";
 }
+
+function goBackToCharacterSelect() {
+  // Reset poin dan stats
+  availablePoints = 6;
+  for (let stat in stats) {
+    stats[stat] = 0;
+    document.getElementById(stat).textContent = "0";
+  }
+  document.getElementById("points-left").textContent = availablePoints;
+  document.getElementById("character-name").value = "";
+
+  // Tampilkan pemilihan karakter, sembunyikan distribusi stat
+  document.getElementById("stat-distribution").style.display = "none";
+  document.getElementById("character-selection").style.display = "block";
+}
