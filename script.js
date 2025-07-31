@@ -15,3 +15,9 @@ function openSettings() {
 function openOptions() {
   alert("Options belum tersedia.");
 }
+
+<script>
+window.addEventListener("orientationchange", () => {
+  location.reload(); // muat ulang agar layout menyesuaikan
+});
+</script>
