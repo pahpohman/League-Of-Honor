@@ -43,11 +43,35 @@
       <button onclick="backToCharacterSelect()">⬅ Kembali</button>
     </div>
 
-    <!-- Game Dimulai -->
-    <div id="game" style="display: none;">
-      <p>Game dimulai...</p>
+<!-- Game Dimulai -->
+<div id="game" style="display: none;">
+
+  <!-- ✅ Status Bar Kiri Atas -->
+  <div id="status-bar">
+    <div class="bar">
+      <label>❤️ Health</label>
+      <div class="bar-container">
+        <div class="bar-fill health" style="width: 100%;"></div>
+      </div>
+      <div class="bar-text" id="health-text">100 / 100</div>
+    </div>
+
+    <div class="bar">
+      <label>💙 Mana</label>
+      <div class="bar-container">
+        <div class="bar-fill mana" style="width: 100%;"></div>
+      </div>
+      <div class="bar-text" id="mana-text">20 / 20</div>
+    </div>
+
+    <div class="bar">
+      <label>🛡️ Armour</label>
+      <div class="bar-container">
+        <div class="bar-fill armour" style="width: 0%;"></div>
+      </div>
+      <div class="bar-text" id="armour-text">0 / 0</div>
     </div>
   </div>
 
-</body>
-</html>
+  <p>Game dimulai...</p>
+</div>
