@@ -23,9 +23,24 @@
       </div>
 
       <div id="game" style="display: none;">
-        <p id="status">Game dimulai...</p>
-      </div>
+  <div id="character-selection">
+    <h2>Pilih Karakter Anda</h2>
+    <div class="character-row">
+      <button onclick="selectCharacter('mage')">
+        <img src="assets/mage.png" alt="Mage"><br>Mage
+      </button>
+      <button onclick="selectCharacter('knight')">
+        <img src="assets/knight.png" alt="Knight"><br>Knight
+      </button>
+      <button onclick="selectCharacter('assassin')">
+        <img src="assets/assassin.png" alt="Assassin"><br>Assassin
+      </button>
+      <button onclick="selectCharacter('archer')">
+        <img src="assets/archer.png" alt="Archer"><br>Archer
+      </button>
     </div>
+  </div>
+</div>
 
     <!-- Memuat JavaScript utama -->
     <script src="script.js"></script>
