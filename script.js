@@ -1,7 +1,17 @@
+let availablePoints = 6;
+const stats = {
+  strength: 0,
+  agility: 0,
+  intelligence: 0,
+  luck: 0,
+  armour: 0,
+};
+
 function newGame() {
-  alert("New Game dimulai!");
   document.getElementById("menu").style.display = "none";
   document.getElementById("game").style.display = "block";
+  document.getElementById("character-selection").style.display = "block";
+  document.getElementById("stat-distribution").style.display = "none";
 }
 
 function loadGame() {
@@ -15,19 +25,6 @@ function openSettings() {
 function openOptions() {
   alert("Options belum tersedia.");
 }
-
-function selectCharacter(className) {
-  alert("Kamu memilih: " + className);
-}
-
-let availablePoints = 6;
-const stats = {
-  strength: 0,
-  agility: 0,
-  intelligence: 0,
-  luck: 0,
-  armour: 0,
-};
 
 function selectCharacter(character) {
   console.log("Karakter dipilih:", character);
@@ -52,7 +49,7 @@ function confirmStats() {
   console.log("Nama karakter:", name);
   console.log("Stat akhir:", stats);
   alert(`Karakter ${name} telah disiapkan!\n\nStats:\n${Object.entries(stats).map(([k, v]) => `${k}: ${v}`).join('\n')}`);
-  // Bisa lanjut ke tahap berikutnya di sini
+  // Lanjut ke tahap berikutnya nanti di sini
 }
 
 function toggleInfo() {
@@ -61,7 +58,6 @@ function toggleInfo() {
 }
 
 function goBackToCharacterSelect() {
-  // Reset poin dan stats
   availablePoints = 6;
   for (let stat in stats) {
     stats[stat] = 0;
@@ -70,12 +66,15 @@ function goBackToCharacterSelect() {
   document.getElementById("points-left").textContent = availablePoints;
   document.getElementById("character-name").value = "";
 
-  // Tampilkan pemilihan karakter, sembunyikan distribusi stat
   document.getElementById("stat-distribution").style.display = "none";
   document.getElementById("character-selection").style.display = "block";
 }
 
 function backToMainMenu() {
+  // Reset semua bagian ke semula
+  document.getElementById("game").style.display = "none";
   document.getElementById("character-selection").style.display = "none";
+  document.getElementById("stat-distribution").style.display = "none";
   document.getElementById("menu").style.display = "block";
 }
+
