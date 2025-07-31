@@ -8,10 +8,11 @@
 </head>
 <body>
 
+  <!-- Peringatan jika orientasi portrait -->
   <div id="orientation-warning">Silakan putar perangkat ke mode landscape</div>
 
   <div id="game-content">
-    <!-- Menu Utama -->
+    <!-- ========== Menu Utama ========== -->
     <div id="menu">
       <h1>Empire and Honor</h1>
       <button onclick="startGame()">Play</button><br>
@@ -19,7 +20,7 @@
       <button onclick="quitGame()">Quit</button>
     </div>
 
-    <!-- Pilih Karakter -->
+    <!-- ========== Pilih Karakter ========== -->
     <div id="character-selection" style="display: none;">
       <h2>Pilih Karakter Anda</h2>
       <div class="character-row">
@@ -34,7 +35,7 @@
       <button onclick="backToMenu()">⬅ Kembali</button>
     </div>
 
-    <!-- Input Nama Karakter -->
+    <!-- ========== Input Nama Karakter ========== -->
     <div id="name-input" style="display: none;">
       <h2>Masukkan Nama Karakter</h2>
       <label for="character-name">Nama:</label><br>
@@ -43,37 +44,41 @@
       <button onclick="backToCharacterSelect()">⬅ Kembali</button>
     </div>
 
-<!-- Game Dimulai -->
-<div id="game" style="display: none; position: relative;">
-  
-  <!-- ✅ Status Bar Kiri Atas -->
-  <div id="status-panel">
-    <div class="bar">
-      <label>❤️ Health</label>
-      <div class="bar-container">
-        <div class="bar-fill health" style="width: 100%;"></div>
+    <!-- ========== Game Dimulai ========== -->
+    <div id="game" style="display: none; position: relative;">
+
+      <!-- ✅ Status Bar di Kiri Atas -->
+      <div id="status-panel">
+        <div class="status-bar-container">
+          <div class="status-label">❤️ Health</div>
+          <div class="status-bar">
+            <div class="status-fill health-fill" style="width: 100%;"></div>
+          </div>
+          <div class="status-text" id="health-text">100 / 100</div>
+        </div>
+
+        <div class="status-bar-container">
+          <div class="status-label">💙 Mana</div>
+          <div class="status-bar">
+            <div class="status-fill mana-fill" style="width: 100%;"></div>
+          </div>
+          <div class="status-text" id="mana-text">20 / 20</div>
+        </div>
+
+        <div class="status-bar-container">
+          <div class="status-label">🛡️ Armour</div>
+          <div class="status-bar">
+            <div class="status-fill armour-fill" style="width: 0%;"></div>
+          </div>
+          <div class="status-text" id="armour-text">0 / 0</div>
+        </div>
       </div>
-      <div class="bar-text" id="health-text">100 / 100</div>
+
+      <!-- Konten Game -->
+      <p>Game dimulai...</p>
     </div>
 
-    <div class="bar">
-      <label>💙 Mana</label>
-      <div class="bar-container">
-        <div class="bar-fill mana" style="width: 100%;"></div>
-      </div>
-      <div class="bar-text" id="mana-text">20 / 20</div>
-    </div>
+  </div> <!-- End game-content -->
 
-    <div class="bar">
-      <label>🛡️ Armour</label>
-      <div class="bar-container">
-        <div class="bar-fill armour" style="width: 0%;"></div>
-      </div>
-      <div class="bar-text" id="armour-text">0 / 0</div>
-    </div>
-  </div>
-
-  <!-- Konten lainnya -->
-  <p>Game dimulai...</p>
-
-</div> <!-- Tutup #game -->
+</body>
+</html>
