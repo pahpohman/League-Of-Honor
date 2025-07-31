@@ -23,13 +23,12 @@
   </body>
 </html>
 
-@media only screen and (orientation: portrait) {
-  body::before {
-    content: "Putar perangkat Anda ke mode landscape untuk bermain.";
-    /* tampilan overlay hitam */
-  }
+<body>
+  <div id="orientation-warning">
+    Silakan putar perangkat Anda ke mode landscape untuk bermain.
+  </div>
 
-  #game-content {
-    display: none;
-  }
-}
+  <div id="game-content">
+    <!-- Semua isi menu dan game di sini -->
+  </div>
+</body>
