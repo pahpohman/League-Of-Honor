@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <!-- Peringatan jika portrait -->
     <div id="orientation-warning">
       Silakan putar perangkat Anda ke mode landscape untuk bermain.
@@ -15,7 +16,6 @@
     <div id="game-content">
       <div id="menu">
         <h1>League of Honor</h1>
-
         <button onclick="newGame()">New Game</button><br><br>
         <button onclick="loadGame()">Load Game</button><br><br>
         <button onclick="openSettings()">Settings</button><br><br>
@@ -27,6 +27,15 @@
       </div>
     </div>
 
+    <!-- Memuat JavaScript utama -->
     <script src="script.js"></script>
+
+    <!-- Memuat orientasi listener -->
+    <script>
+      window.addEventListener("orientationchange", () => {
+        location.reload(); // Muat ulang agar layout menyesuaikan
+      });
+    </script>
+
   </body>
 </html>
