@@ -22,3 +22,14 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+@media only screen and (orientation: portrait) {
+  body::before {
+    content: "Putar perangkat Anda ke mode landscape untuk bermain.";
+    /* tampilan overlay hitam */
+  }
+
+  #game-content {
+    display: none;
+  }
+}
