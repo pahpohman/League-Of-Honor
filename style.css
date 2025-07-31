@@ -1,29 +1,29 @@
 body {
-  background-color: #111;
+  background-color: #1a1a1a;
+  color: #fff;
   font-family: 'Courier New', monospace;
-  color: white;
   text-align: center;
-  margin-top: 100px;
+  margin: 0;
+  padding: 0;
 }
 
 #menu h1 {
   font-size: 48px;
-  margin-bottom: 40px;
+  margin-top: 60px;
   color: #FFD700;
-  text-shadow: 2px 2px 5px black;
 }
 
 #menu button {
-  display: block;
   width: 200px;
+  padding: 12px;
   margin: 10px auto;
-  font-size: 20px;
-  padding: 10px;
-  background-color: #444;
+  font-size: 18px;
+  background: #444;
   color: white;
   border: 2px solid #888;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  display: block;
 }
 
 #menu button:hover {
@@ -32,90 +32,22 @@ body {
 
 #orientation-warning {
   display: none;
-  position: fixed;
-  z-index: 9999;
-  background: black;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
 }
 
-/* ⬇️ Tambahkan ini agar game muncul saat landscape */
-#game-content {
-  display: block;
-}
-
-/* Sembunyikan game saat portrait */
 @media only screen and (orientation: portrait) {
   #orientation-warning {
-    display: flex;
+    display: block;
+    position: fixed;
+    background: black;
+    color: white;
+    font-size: 20px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50vh;
+    z-index: 9999;
   }
 
   #game-content {
-    display: none !important;
+    display: none;
   }
 }
-
-.character-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-#character-selection button {
-  background-color: #222;
-  color: white;
-  border: 2px solid #888;
-  border-radius: 8px;
-  padding: 10px;
-  width: 120px;
-  cursor: pointer;
-}
-
-#character-selection img {
-  width: 80px;
-  height: 80px;
-  image-rendering: pixelated;
-}
-
-#stat-distribution {
-  margin-top: 20px;
-}
-
-.stat-row {
-  margin: 10px auto;
-  font-size: 18px;
-}
-
-.stat-row button {
-  margin: 0 10px;
-  font-size: 18px;
-  padding: 4px 10px;
-}
-
-#stat-distribution button[title] {
-  font-weight: bold;
-  border: none;
-  background: #666;
-  color: white;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  margin-right: 8px;
-}
-
-#stat-distribution button[title]:hover {
-  background: #888;
-}
-
-<br>
-<button onclick="goBackToCharacterSelect()">⬅ Kembali</button>
