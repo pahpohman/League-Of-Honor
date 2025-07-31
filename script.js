@@ -45,15 +45,28 @@ function confirmName() {
 
   alert(`Karakter "${name}" (${selectedCharacter === 'male' ? 'Laki-laki' : 'Perempuan'}) dipilih!`);
   
-  // Lanjut ke game
   document.getElementById("name-input").style.display = "none";
   document.getElementById("game").style.display = "block";
 
   // Bisa lanjut ke distribusi stat atau gameplay
+  updateStatusBars(); // Menampilkan bar status saat game dimulai
 }
 
-// Reload jika perangkat dirotasi
-window.addEventListener("orientationchange", () => {
-  location.reload();
-});
+// Fungsi untuk memantau orientasi (tanpa reload)
+function checkOrientation() {
+  const warning = document.getElementById("orientation-warning");
+  const gameContent = document.getElementById("game-content");
 
+  if (window.innerHeight > window.innerWidth) {
+    // Potrait
+    warning.style.display = "flex";
+    gameContent.style.display = "none";
+  } else {
+    // Landscape
+    warning.style.display = "none";
+    gameContent.style.display = "block";
+  }
+}
+
+window.addEventListener("load", checkOrientation);
+window.addEventListener("resize", checkOrientation);
