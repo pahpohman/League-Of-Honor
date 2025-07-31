@@ -46,6 +46,11 @@ body {
   align-items: center;
 }
 
+/* ⬇️ Tambahkan ini agar game muncul saat landscape */
+#game-content {
+  display: block;
+}
+
 /* Sembunyikan game saat portrait */
 @media only screen and (orientation: portrait) {
   #orientation-warning {
