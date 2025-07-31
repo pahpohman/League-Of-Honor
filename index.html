@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Empire and Honor</title> <!-- Ubah nama game juga -->
+  <title>Empire and Honor</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -11,6 +11,7 @@
   <div id="orientation-warning">Silakan putar perangkat ke mode landscape</div>
 
   <div id="game-content">
+    <!-- Menu Utama -->
     <div id="menu">
       <h1>Empire and Honor</h1>
       <button onclick="startGame()">Play</button><br>
@@ -18,6 +19,7 @@
       <button onclick="quitGame()">Quit</button>
     </div>
 
+    <!-- Pilih Karakter -->
     <div id="character-selection" style="display: none;">
       <h2>Pilih Karakter Anda</h2>
       <div class="character-row">
@@ -32,6 +34,16 @@
       <button onclick="backToMenu()">⬅ Kembali</button>
     </div>
 
+    <!-- Input Nama Karakter -->
+    <div id="name-input" style="display: none;">
+      <h2>Masukkan Nama Karakter</h2>
+      <label for="character-name">Nama:</label><br>
+      <input type="text" id="character-name" placeholder="Contoh: Arjuna"><br><br>
+      <button onclick="confirmName()">Lanjut</button>
+      <button onclick="backToCharacterSelect()">⬅ Kembali</button>
+    </div>
+
+    <!-- Game Dimulai -->
     <div id="game" style="display: none;">
       <p>Game dimulai...</p>
     </div>
@@ -39,4 +51,3 @@
 
 </body>
 </html>
-
