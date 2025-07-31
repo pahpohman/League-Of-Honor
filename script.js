@@ -74,3 +74,8 @@ function goBackToCharacterSelect() {
   document.getElementById("stat-distribution").style.display = "none";
   document.getElementById("character-selection").style.display = "block";
 }
+
+function backToMainMenu() {
+  document.getElementById("character-selection").style.display = "none";
+  document.getElementById("menu").style.display = "block";
+}
