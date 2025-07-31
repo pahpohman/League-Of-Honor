@@ -85,3 +85,18 @@ body {
   height: 80px;
   image-rendering: pixelated;
 }
+
+#stat-distribution {
+  margin-top: 20px;
+}
+
+.stat-row {
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+.stat-row button {
+  margin: 0 10px;
+  font-size: 18px;
+  padding: 4px 10px;
+}
