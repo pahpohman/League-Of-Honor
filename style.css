@@ -51,3 +51,27 @@ body {
     display: none;
   }
 }
+
+.character-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.character-row button {
+  background-color: #333;
+  border: 2px solid #888;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.character-row img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
