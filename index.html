@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <!-- Peringatan jika portrait -->
     <div id="orientation-warning">
       Silakan putar perangkat Anda ke mode landscape untuk bermain.
@@ -23,24 +22,77 @@
       </div>
 
       <div id="game" style="display: none;">
-  <div id="character-selection">
-    <h2>Pilih Karakter Anda</h2>
-    <div class="character-row">
-      <button onclick="selectCharacter('mage')">
-        <img src="assets/mage.png" alt="Mage"><br>Mage
-      </button>
-      <button onclick="selectCharacter('knight')">
-        <img src="assets/knight.png" alt="Knight"><br>Knight
-      </button>
-      <button onclick="selectCharacter('assassin')">
-        <img src="assets/assassin.png" alt="Assassin"><br>Assassin
-      </button>
-      <button onclick="selectCharacter('archer')">
-        <img src="assets/archer.png" alt="Archer"><br>Archer
-      </button>
+        <!-- Pilih Karakter -->
+        <div id="character-selection">
+          <h2>Pilih Karakter Anda</h2>
+          <div class="character-row">
+            <button onclick="selectCharacter('mage')">
+              <img src="assets/mage.png" alt="Mage"><br>Mage
+            </button>
+            <button onclick="selectCharacter('knight')">
+              <img src="assets/knight.png" alt="Knight"><br>Knight
+            </button>
+            <button onclick="selectCharacter('assassin')">
+              <img src="assets/assassin.png" alt="Assassin"><br>Assassin
+            </button>
+            <button onclick="selectCharacter('archer')">
+              <img src="assets/archer.png" alt="Archer"><br>Archer
+            </button>
+          </div>
+        </div>
+
+        <!-- Distribusi Stat -->
+        <div id="stat-distribution" style="display: none;">
+          <h2>Kustomisasi Karakter</h2>
+          <label>Nama Karakter: <input type="text" id="character-name" value="Mage"></label>
+
+          <p>
+            <button onclick="toggleInfo()" title="Penjelasan status">i</button>
+            Poin tersedia: <span id="points-left">6</span>
+          </p>
+
+          <div id="info-box" style="display: none; font-size: 14px; margin-bottom: 10px; text-align: left;">
+            <ul>
+              <li><strong>Strength</strong>: Menambah serangan fisik</li>
+              <li><strong>Agility</strong>: Meningkatkan kecepatan dan menghindar</li>
+              <li><strong>Intelligence</strong>: Menambah serangan sihir dan mana</li>
+              <li><strong>Luck</strong>: Meningkatkan critical dan drop item</li>
+              <li><strong>Armour</strong>: Mengurangi damage yang diterima</li>
+            </ul>
+          </div>
+
+          <div class="stat-row">
+            Strength: <button onclick="adjustStat('strength', -1)">−</button>
+            <span id="strength">0</span>
+            <button onclick="adjustStat('strength', 1)">+</button>
+          </div>
+          <div class="stat-row">
+            Agility: <button onclick="adjustStat('agility', -1)">−</button>
+            <span id="agility">0</span>
+            <button onclick="adjustStat('agility', 1)">+</button>
+          </div>
+          <div class="stat-row">
+            Intelligence: <button onclick="adjustStat('intelligence', -1)">−</button>
+            <span id="intelligence">0</span>
+            <button onclick="adjustStat('intelligence', 1)">+</button>
+          </div>
+          <div class="stat-row">
+            Luck: <button onclick="adjustStat('luck', -1)">−</button>
+            <span id="luck">0</span>
+            <button onclick="adjustStat('luck', 1)">+</button>
+          </div>
+          <div class="stat-row">
+            Armour: <button onclick="adjustStat('armour', -1)">−</button>
+            <span id="armour">0</span>
+            <button onclick="adjustStat('armour', 1)">+</button>
+          </div>
+
+          <br>
+          <button onclick="confirmStats()">Lanjut</button>
+          <button onclick="goBackToCharacterSelect()">Kembali</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- Memuat JavaScript utama -->
     <script src="script.js"></script>
@@ -51,54 +103,5 @@
         location.reload(); // Muat ulang agar layout menyesuaikan
       });
     </script>
-
   </body>
 </html>
-
-<div id="stat-distribution" style="display: none;">
-  <h2>Kustomisasi Karakter</h2>
-  <label>Nama Karakter: <input type="text" id="character-name" value="Mage"></label>
-
-<p>
-  <button onclick="toggleInfo()" title="Penjelasan status">i</button>
-  Poin tersedia: <span id="points-left">6</span>
-</p>
-<div id="info-box" style="display: none; font-size: 14px; margin-bottom: 10px; text-align: left;">
-  <ul>
-    <li><strong>Strength</strong>: Menambah serangan fisik</li>
-    <li><strong>Agility</strong>: Meningkatkan kecepatan dan menghindar</li>
-    <li><strong>Intelligence</strong>: Menambah serangan sihir dan mana</li>
-    <li><strong>Luck</strong>: Meningkatkan critical dan drop item</li>
-    <li><strong>Armour</strong>: Mengurangi damage yang diterima</li>
-  </ul>
-</div>
-
-  <div class="stat-row">
-    Strength: <button onclick="adjustStat('strength', -1)">−</button>
-    <span id="strength">0</span>
-    <button onclick="adjustStat('strength', 1)">+</button>
-  </div>
-  <div class="stat-row">
-    Agility: <button onclick="adjustStat('agility', -1)">−</button>
-    <span id="agility">0</span>
-    <button onclick="adjustStat('agility', 1)">+</button>
-  </div>
-  <div class="stat-row">
-    Intelligence: <button onclick="adjustStat('intelligence', -1)">−</button>
-    <span id="intelligence">0</span>
-    <button onclick="adjustStat('intelligence', 1)">+</button>
-  </div>
-  <div class="stat-row">
-    Luck: <button onclick="adjustStat('luck', -1)">−</button>
-    <span id="luck">0</span>
-    <button onclick="adjustStat('luck', 1)">+</button>
-  </div>
-  <div class="stat-row">
-    Armour: <button onclick="adjustStat('armour', -1)">−</button>
-    <span id="armour">0</span>
-    <button onclick="adjustStat('armour', 1)">+</button>
-  </div>
-
-  <br>
-  <button onclick="confirmStats()">Lanjut</button>
-</div>
