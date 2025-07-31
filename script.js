@@ -54,3 +54,8 @@ function confirmStats() {
   alert(`Karakter ${name} telah disiapkan!\n\nStats:\n${Object.entries(stats).map(([k, v]) => `${k}: ${v}`).join('\n')}`);
   // Bisa lanjut ke tahap berikutnya di sini
 }
+
+function toggleInfo() {
+  const box = document.getElementById("info-box");
+  box.style.display = box.style.display === "none" ? "block" : "none";
+}
